@@ -1,0 +1,17 @@
+<div class="container" *ngIf="loading" style="margin: 150px auto; text-align: center;">
+
+    <h1 style="color: white; font-size: 50px;">Payment in process..</h1>
+
+  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+</div>
+
+<div class="container" *ngIf="!loading" style="margin: 150px auto; text-align: center;">
+  <h1 style="color: white; font-size: 50px;">Payment successful</h1>
+  <h6 style="color: white; font-size: 19px;">You will redirected to home page</h6>
+</div>
+
+
+
+
+  

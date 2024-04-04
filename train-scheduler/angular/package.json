@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@nomadreservations/ngx-stripe": "^1.2.3",
+    "@stripe/stripe-js": "^1.52.1",
+    "ngx-stripe": "^16.0.0"
+  }
+}

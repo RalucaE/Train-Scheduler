@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\angular",
+    "\\angular\\trainscheduler",
+    "\\angular\\trainscheduler\\src",
+    "\\angular\\trainscheduler\\src\\app",
+    "\\angular\\trainscheduler\\src\\app\\pages",
+    "\\angular\\trainscheduler\\src\\app\\pages\\login",
+    "\\angular\\trainscheduler\\src\\app\\services"
+  ],
+  "SelectedNode": "\\angular\\trainscheduler\\src\\app\\services\\user.service.ts",
+  "PreviewInSolutionExplorer": false
+}

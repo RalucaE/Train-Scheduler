@@ -1,0 +1,10 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body{
+    background-image: url('../src/assets/images/train1.jpg');
+  } 
+
+  .centered-dialog .mat-dialog-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

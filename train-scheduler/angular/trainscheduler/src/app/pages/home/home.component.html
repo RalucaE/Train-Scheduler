@@ -1,0 +1,128 @@
+<div class="container" >
+    <div class="col"> 
+        <div class="form">
+            <form #searchForm="ngForm" (ngSubmit)="submit(searchForm)">
+                <div id="form-detail">
+                    <div class="location-details">
+                        <div class="lable">
+                            <figure class="icon"><img alt="" src="https://i.ibb.co/KwnYdXN/location.png"></figure>
+                            <span class="text">Location Details</span>
+                        </div>
+                        <div class="errorlabel"></div>
+                            
+                        <div class="input-field">  
+                            <div class="rotate-btn">                                                                          
+                                <figure>
+                                    <form  #searchForm="ngForm"  (click)="reverseValues(searchForm)">
+                                    <img alt="" src="https://i.ibb.co/HPBrQkn/rotate-btn.png">
+                                </form>
+                                </figure>
+                            </div>                     
+                            <div class="from"> 
+                                <input class="input" type="text" matInput [matAutocomplete]="auto1"  ngModel name="orasOrigine" placeholder="From" required #originInput>     
+                                <mat-autocomplete #auto1="matAutocomplete" style="background-color: white;">
+                                    <mat-option  *ngFor="let option of filteredOriginSuggestions | async" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>                                                            
+                            </div>
+                            <div class="errorlabel-from"></div>  
+                            <div class="to">
+                               <input class="input" type="text"  matInput [matAutocomplete]="auto2"  ngModel name="orasDestinatie" placeholder="To" required #destinationInput>
+                                <mat-autocomplete #auto2="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredDestinationSuggestions | async" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>                      
+                            </div>
+                            <div class="errorlabel-to"></div>  
+                        </div>
+                    </div>
+                    <div class="date-details">
+                        <div class="lable">
+                            <figure class="icon"><img alt="" src="https://i.ibb.co/7N5zdnc/calendar.png"></figure>
+                            <span class="text">Date Details</span>
+                        </div>
+                        <div class="input-field">
+                            <mat-form-field class="example-form-field">
+                                <mat-label>dd/mm/yyyy</mat-label>
+                                <input matInput [matDatepicker]="datepicker" [min]="currentDate"  [(ngModel)]="selectedDate" name="dateTime">
+                                <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker >
+                                  <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                  </mat-datepicker-actions>
+                                </mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="errorlabel-date"></div>  
+                    <div class="checkbox">
+                        <mat-checkbox value="checked" (click)="changeCheckBoxValue(checked)"></mat-checkbox>
+                        <label class="checkbox-label">Show only routes from current time</label>
+                    </div>
+                    <div class="button-details">
+                        <button class="submit-button" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>       
+    <div class="rute-frecvente">
+        <mat-card class="cards-title">
+            <mat-card-content class="cards-title-content">
+                <img class="imagine-rute" alt="" src="../../../assets/images/icon.png">
+                <span class="text">Frequented routes </span>
+            </mat-card-content>
+            <hr id="line">
+        </mat-card>
+        <div class="cards">
+            <mat-card class="card" value="clicked" (click)="frequentedRoute('Brasov', 'Bucuresti')">
+                <mat-card-title class="card-title">Brasov-Bucuresti</mat-card-title>
+                <mat-card-content class="card-content"> 
+                    IR 01734 Direct train
+                    <img class="imagine" alt="" src="../../../assets/images/1.png">                    
+                    <img class="imagine" alt="" src="../../../assets/images/2.png">
+                    <img class="imagine-cuseta" alt="" src="../../../assets/images/cuseta.png">                                   
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" (click)="frequentedRoute('Brasov', 'Buzau')">
+                <mat-card-title class="card-title">Brasov-Buzau</mat-card-title>
+                <mat-card-content class="card-content"> 
+                    IR 01734 Direct train
+                    <img class="imagine" alt="" src="../../../assets/images/1.png">
+                    <img class="imagine" alt="" src="../../../assets/images/2.png">
+                    <img class="imagine-cuseta" alt="" src="../../../assets/images/cuseta.png">               
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" value="clicked" (click)="frequentedRoute('Brasov', 'Constanta')">
+                <mat-card-title class="card-title">Brasov-Constanta</mat-card-title>
+                <mat-card-content class="card-content"> 
+                    IR 01734 Direct train
+                    <img class="imagine" alt="" src="../../../assets/images/1.png">
+                    <img class="imagine" alt="" src="../../../assets/images/2.png">
+                    <img class="imagine-cuseta" alt="" src="../../../assets/images/cuseta.png">               
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" value="clicked" (click)="frequentedRoute('Brasov', 'Ploiesti')">
+                <mat-card-title class="card-title">Brasov-Ploiesti</mat-card-title>
+                <mat-card-content class="card-content"> 
+                    IR 01734 Direct train
+                    <img class="imagine" alt="" src="../../../assets/images/1.png">
+                    <img class="imagine" alt="" src="../../../assets/images/2.png">
+                    <img class="imagine-cuseta" alt="" src="../../../assets/images/cuseta.png">               
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" value="clicked" (click)="frequentedRoute('Brasov', 'Sinaia')">
+                <mat-card-title class="card-title">Brasov-Sinaia</mat-card-title>
+                <mat-card-content class="card-content"> 
+                    IR 01734 Direct train
+                    <img class="imagine" alt="" src="../../../assets/images/1.png">
+                    <img class="imagine" alt="" src="../../../assets/images/2.png">
+                    <img class="imagine-cuseta" alt="" src="../../../assets/images/cuseta.png">               
+                </mat-card-content>
+            </mat-card>  
+        </div>      
+    </div>
+</div>

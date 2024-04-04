@@ -1,0 +1,336 @@
+<div class="container">
+    <div class="rute" id="rute-cont" style="height: 650px; overflow: scroll;">
+    <ul class="list-group" *ngFor="let trainRoute of trainRoutes">
+      <li class="list-group-item border-0 pl-0 pr-0">
+        <div class="div-itinerary-station line-height-1-5">
+          <div>
+            <div class="row div-itineraries-row-main">
+              <div class="col-sm-2 col-md-3 pl-lg-4"> <!-- LEFT SIDE -->
+                <div class="div-middle float-sm-left"> 
+                  <div class="d-flex flex-column" style="margin-left: 20px;">
+                    <div class="d-none d-sm-block">
+                      <span class="text-0-8rem ">Departure at</span>
+                    </div>
+                   
+                    <div class="div-middle line-height-1">
+                      <div>
+                        <span class="text-1-4rem">{{trainRoute.oraPlecare}}</span>
+                      </div>
+                      <div class="text-0-8rem d-sm-block ml-1"></div>
+                    </div>
+                    <div class="d-block">
+                      <span class="text-0-8rem ">{{trainRoute.orasOrigine}}</span>
+                    </div>
+                  </div>                   
+                </div> 
+              </div> <!-- END  LEFT SIDE -->
+              <div class="col-7 col-sm-4"> <!-- MIDDLE SIDE-->
+                <div class="div-middle">
+                  <div>
+                    <div> <!--NUMAR TREN SECTION-->
+                      <span class="span-train-category-ir">{{trainRoute.trenSchimbare1.numarTren}}</span>
+                      <ng-container *ngFor="let tren of [trainRoute.trenSchimbare2, trainRoute.trenSchimbare3, trainRoute.trenSchimbare4]">
+                          <div class="mx-1">
+                              <img *ngIf="tren" src="../../../assets/images/downArrow_1.png" style="width: 25px; height:25px; margin-left: 10px;">           
+                          </div>              
+                          <span *ngIf="tren" class="span-train-category-ir">{{tren.numarTren}}</span>
+                      </ng-container>
+                    </div> <!-- END  NUMAR TREN SECTION-->
+                    <div class="align-self-center mb-2">
+
+                      <div *ngIf="trainRoute.trenSchimbare1.firstClass" class="d-inline-block div-itinerary-service-all">
+                        <div class="div-icon-train-service-very-small opacity-0-9">
+                          <img src="../../../assets/images/1.png" alt="" style="width: 20px; height:20px;">
+                       
+                        </div>
+                      </div>
+                      <div *ngIf="trainRoute.trenSchimbare1.secondClass" class="d-inline-block div-itinerary-service-all">
+                        <div class="div-icon-train-service-very-small opacity-0-9">
+                          <img src="../../../assets/images/2.png" alt="" style="width: 20px; height:20px;">
+                          
+                        </div>
+                      </div>
+                      <div *ngIf="trainRoute.trenSchimbare1.cuseta" class="d-inline-block div-itinerary-service-all">
+                        <div class="div-icon-train-service-very-small opacity-0-9">
+                          <img src="../../../assets/images/cuseta.png" alt="" style="width: 20px; height:20px;">
+                         
+                        </div>
+                      </div>
+
+                      <div *ngIf="trainRoute.trenSchimbare1.bicicleta" class="d-inline-block div-itinerary-service-all">
+                        <div class="div-icon-train-service-very-small opacity-0-9">
+                          <img src="../../../assets/images/bicicleta.png" alt="" style="width: 20px; height:20px;">
+                        
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div>
+                      <span>{{trainRoute.timeSpent}}</span>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> <!-- END  MIDDLE SIDE-->
+              <div class="col-5 col-sm-2 col-xl-3 p-1 p-15px-sm"> <!-- MIDDLE A LITTLE TO THE RIGHT SIDE-->
+                <div class="div-middle ">
+                  <div>
+                    <button class="btn btn-outline-secondary mt-1 mt-lg-0" style="margin-right: 10px;" (click)="showDetails(trainRoute)">Details</button>
+                  </div>
+                  <div>
+                    <button class="btn mt-1 mt-xl-0 btn-outline-primary" (click)="goToBuyTicket(trainRoute.id)">Buy</button>
+                  </div>
+                </div>
+              </div> <!-- END MIDDLE A LITTLE TO THE RIGHT SIDE-->
+              <div class="col-sm-4 col-md-3 col-xl-2 d-none text-right d-sm-block pr-lg-4"> <!-- RIGHT SIDE-->
+                <div class="div-middle float-sm-right " style="margin-right: 20px;">
+                  <div class="d-flex flex-column">
+                    <div class="d-block">
+                      <div class="d-none float-right d-sm-block">
+                        <span  class="text-0-8rem"> Arrival at</span>
+                      </div>
+                    </div>
+                    <div class="d-block">
+                      <div class="div-middle line-height-1 float-right">
+                        <span  class="text-1-4rem"> {{trainRoute.oraSosire}}</span>
+                      </div>
+                    </div>
+                    <div class="d-block">
+                      <div class="d-none  float-right d-sm-block">
+                        <span class="text-0-8rem">{{trainRoute.orasDestinatie}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- END RIGHT SIDE-->
+            </div>
+          </div>
+        </div>
+        
+        
+        <div *ngIf="trainRoute.enableShowDetails" class="details-container" style="height: 500px"id="det-cont"> <!-- START OF HIDDEN SIDE-->
+          
+            <div class="row div-itineraries-row-details" id="div-itinerary-0-details">
+              
+              <div class="col-lg-11">
+                <div class="row">
+                  <ul *ngFor="let train of trains" class="list-group list-group-itinerary-part w-100">
+                          
+                    <li  class="list-group-item list-group-item-itinerary-part">
+                      <div class="row equal">
+                        <div class="col-6 col-md-5 col-lg-4 flex-column-nowrap">
+                          <div class="row">
+                            <div class="col-2">
+                              <div class="flex-column-nowrap h-100">
+                                <div class="flex-grow-0">
+                                  <div class="div-graphics-station-point"></div>
+                                </div>
+                                <div class="flex-grow-1 position-relative">
+                                  <div class="div-graphics-station-line-full"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-9 color-blue text-1-1rem">
+                              {{train.orasOrigine}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item list-group-item-itinerary-part">
+                      <div class="row equal">
+                        <div class="col-6 col-md-5 col-lg-4 flex-column-nowrap">
+                          <div class="row">
+                            <div class="col-2">
+                              <div class="div-graphics-station-line-bottom"></div>
+
+
+                            </div>
+                            <div class="col-9">
+                              <div class="pb-2 div-itineraries-departure-arrival">
+                                Dep 24 {{trainRoute.monthDeparture}}. {{train.oraPlecare}}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row flex-grow-1 position-relative">
+                            <div class="col-2">
+                              <div class="div-graphics-station-line-full"></div>
+                              
+                            </div>
+                            <div class="col-9">
+                              <div class="pl-2 pl-sm-3">
+                                <button type="button" (click)="enableShowStations(train)" class="btn btn-outline-dark p-1 text-0-8rem" id="button-itinerary-part-0-stations">
+                                  Stops <img src="../../../assets/images/downArrow_1.png" alt="" style="width: 20px; height: 20px;">
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div  class="row" [hidden]="!train.showStations" *ngFor="let station of train.stations">                     
+                            <div class="col-2">
+                              <div class="div-graphics-station-line-full"></div>
+
+                              <div class="flex-grow-1 position-relative">
+                                <div class="div-graphics-station-line-full"></div>
+                              </div>
+                              <div class="flex-grow-0">
+                                <div class="div-graphics-station-point-small"></div>
+                              </div>
+                              <div class="flex-grow-1 position-relative">
+                                <div class="div-graphics-station-line-full"></div>
+                              </div>                         
+                            </div>
+                            <div class="col-9 color-blue mt-1">
+                              <div class="pl-2 mt-1 mt-sm-0 mb-1 mb-sm-0 pl-sm-3">
+                                {{station.stationName}}
+                              </div>
+                            </div>                      
+                          </div>                 
+                          <div class="row">
+                            
+                            <div class="col-2">
+                              
+                              <div class="flex-column-nowrap h-100">
+                                <div class="flex-grow-1 position-relative">
+                                  <div class="div-graphics-station-line-full"></div>
+                                </div>
+                                <div class="flex-grow-1 position-relative">
+                                  <div class="div-graphics-station-line-full"></div>
+                                </div>
+                                <div class="flex-grow-0">
+                                  <div class="div-graphics-station-point"></div>
+                                </div>
+    
+                              </div>
+                              
+                            </div>
+                          
+                            <div class="col-9">
+                              <div class="pt-2 div-itineraries-departure-arrival">
+                                Arr 24 {{trainRoute.monthDeparture}}. {{train.oraSosire}}
+                              </div>
+                              <div class=" color-blue text-1-1rem">
+                                {{train.orasDestinatie}}
+                              </div>  
+                            </div>
+                            
+                          </div>                                      
+                        </div>
+                        <div class="col-6 col-md-7 col-lg-8">
+                  
+                          <div class="row text-lg-1-1rem">
+                            <div class="col-md-8 col-lg-9 align-self-center">
+                              <div class="row">
+                                <div class="col-md-6 col-lg-5 align-self-center">
+                                  {{train.totalKilometers}} km<br>
+                                  with             
+                                  <span class="span-train-category-ir">
+                                    {{train.numarTren}}
+                                  </span>                
+                                </div>
+                                <div class="col-md-6 col-lg-7 align-self-center">
+                                  <div class="row">
+                                    <div class="service-icons">
+                                      <div *ngIf="train.firstClass" class="service-icon d-inline-block div-itinerary-service-all">
+                                        <img src="../../../assets/images/1.png" alt="" style="width: 20px; height: 20px;">
+                                      </div>
+                                      <div *ngIf="train.secondClass" class="service-icon d-inline-block div-itinerary-service-all">
+                                        <img src="../../../assets/images/2.png" alt="" style="width: 20px; height: 20px;">
+                                      </div>
+                                      <div *ngIf="train.bicicleta" class="service-icon d-inline-block div-itinerary-service-all">
+                                        <img src="../../../assets/images/bicicleta.png" alt="" style="width: 20px; height: 20px;">
+                                      </div>
+                                      <div *ngIf="train.cuseta" class="service-icon d-inline-block div-itinerary-service-all">
+                                        <img src="../../../assets/images/cuseta.png" alt="" style="width: 20px; height: 20px;">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>             
+                    </li>   
+                    <hr>  
+                  </ul>
+                  <div class="row w-100 mt-1"> <!-- BUTTOM BUTTON SECTION-->
+                    <div class="col-12">
+                      <div class="btn-group" role="group">
+                        <button type="button" (click)="showPriceSection()" (click)="scrollToDiv()" class="btn bg-gray-light-hover bg-gray-light text-0-8rem" id="button-itinerary-0-fares">
+                          <img src="../../../assets/images/moneyBill.png" style="width: 35px; height:35px;" alt=""> View prices
+                      </button>                   
+                      <button type="button" class="btn bg-gray-light-hover bg-gray-light text-0-8rem" (click)="scrollToDiv2()" (click)="initMap(trainRoute.id)" id="button-itinerary-0-map">
+                        <img src="../../../assets/images/mapImg.png" style="width: 55px; height:35px;" alt=""> Map                  
+                      </button>                               
+                      </div>
+                    </div>
+                  </div>   <!-- BUTTOM END BUTTON SECTION-->
+                  <div #targetDiv class="centered-div" [hidden]="!showCalculatePriceSection" class="row w-100 mt-3"> <!-- PRICE SECTION-->
+                    <div class="col-12">
+                      <h4>View prices</h4>
+                    </div>
+                    <div class="container">
+                      <div class="form-group">
+                        <label>Passenger type</label>
+                        <select class="form-control" [(ngModel)]="selectedOption">
+                          <option value="Adult">Adult</option>
+                          <option value="Copil">Child</option>
+                          <option value="Elev">Pupil</option>
+                          <option value="Pensionar">Pensioner</option>
+                          <option value="Student">Student</option>
+                        </select>
+                      </div>
+                      <div *ngFor="let train of trains" class="form-group">
+                        <label>Place type in {{train.numarTren}} </label>
+                        <select class="form-control" [(ngModel)]="train.classType">
+                          <option value="0">1st class (reserved seat)</option>
+                          <option value="1" selected="selected">2nd class (reserved seat)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <div class="form-group">
+                          <button type="button" (click)="showPriceCalculated()" class="btn bg-gray-light-hover bg-gray-light text-0-8rem">Calculate</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div [hidden]="!showPrice" class="row w-100" style="margin-left: 5px;">
+                      <div class="col-auto">
+                        <div class="color-blue">                   
+                          <h5>Price: {{price}} lei</h5>                                                    
+                        </div>
+                      </div>                  
+                    </div>
+                  </div>  <!-- PRICE SECTION-->         
+                </div> 
+                        
+              </div> 
+              
+            </div>
+            
+            <div #targetDiv2 class="centered-div" [hidden]="!showMap">
+              <div  id="map" style="height: 300px;"></div>
+            </div>
+            
+          
+          
+        </div> <!-- END OF HIDDEN SIDE-->
+    
+      </li>
+    </ul>
+    <div class="return-routes">
+      <div style="font-size: 22px; font-weight: 400; margin-top: 5px;">
+        Looking for return routes?
+      </div>
+      <div>
+        <button mat-raised-button color="primary" style="margin-top: 10px; border-radius: 5px; font-size: 16px; background-color: #4070f4;" (click)="openModal()">See return routes</button>
+      </div> 
+    </div>
+
+    
+
+  </div>
+   </div>
+   <img alt="" class="back" (click)="scrollToTop()" src="../../../assets/images/scroll.png">

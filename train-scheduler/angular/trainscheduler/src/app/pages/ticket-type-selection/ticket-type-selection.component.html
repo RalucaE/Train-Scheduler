@@ -1,0 +1,86 @@
+<div class="ticket-types" style="margin-top: 20px; ">
+    <div class="container">
+        <div class="title" style="padding: 20px 0px 10px 5px;" >
+            <h5 style="font-weight: 700;" >Select ticket types</h5>
+        </div>
+        <div class="form-div">
+            <hr style="margin-top:0px; margin-bottom: 5px;">
+            <form #f="ngForm" (ngSubmit)="f.valid && onSubmit()" novalidate id="myform">
+                <div class="form-group" >
+                    <label>Adults</label>
+                    <div class="input-group">
+                        <input [(ngModel)]="ticketAdult" name="ticket1" id="input1"  type="number" min="0" value="0" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button (click)="increment(1)" type="button" id="plus1" class="btn btn-outline-secondary">+</button>
+                            <button (click)="decrement(1)" type="button" id="minus1" class="btn btn-outline-secondary">-</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label>Children</label>
+                    <div class="input-group">
+                        <input [(ngModel)]="ticketChildren" name="ticket2" id="input2"  type="number" min="0" value="0" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button (click)="increment(2)" type="button"  id="plus2"  class="btn btn-outline-secondary">+</button>
+                            <button (click)="decrement(2)" type="button"  id="minus2" class="btn btn-outline-secondary">-</button>
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="form-group">
+                    <label>Pupils</label>
+                    <div class="input-group">
+                        <input [(ngModel)]="ticketPupils" name="ticket3" id="input3"  type="number" min="0" value="0" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button (click)="increment(3)" type="button"  id="plus3"  class="btn btn-outline-secondary">+</button>
+                            <button (click)="decrement(3)" type="button"  id="minus3" class="btn btn-outline-secondary">-</button>
+                        </div>
+                    </div>            
+                </div>        
+        
+                <div class="form-group">
+                    <label>Students</label>
+                    <div class="input-group">
+                        <input [(ngModel)]="ticketStudents" name="ticket4" id="input4"  type="number" min="0" value="0" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button (click)="increment(4)" type="button"  id="plus4"  class="btn btn-outline-secondary">+</button>
+                            <button (click)="decrement(4)" type="button"  id="minus4" class="btn btn-outline-secondary">-</button>
+                        </div>
+                    </div>      
+                </div>    
+        
+                <div class="form-group">
+                    <label>Pensioners</label>
+                    <div class="input-group">
+                        <input [(ngModel)]="ticketPensioners" name="ticket5" id="input5" type="number" min="0" value="0" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button (click)="increment(5)" type="button"  id="plus5"  class="btn btn-outline-secondary">+</button>
+                            <button (click)="decrement(5)" type="button"  id="minus5" class="btn btn-outline-secondary">-</button>
+                        </div>
+                    </div>
+                </div>    
+        
+                <div class="form-group">
+                    <label>Class/type of wagon</label>
+                    <div class="input-group">
+                        <select [(ngModel)]="classType" name="classType" id="input6" class="form-control">
+                        <!-- <div class="input-group-append"> -->
+                            <option value=1>Class 1</option>
+                            <option value=2>Class 2</option>
+                        <!-- </div> -->
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="title">
+    <div *ngIf="f.submitted && !isSuccessful" class="alert alert-danger" role="alert">
+        You must choose at least one ticket.
+    </div>
+    <button form="myform" type="submit" class="btn btn-primary" >Next Step</button>
+</div>
+<img alt="" class="back" (click)="scrollToTop()" src="../../../assets/images/scroll.png">

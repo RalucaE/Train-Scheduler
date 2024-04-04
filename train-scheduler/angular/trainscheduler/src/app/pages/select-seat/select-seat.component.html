@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="select-train">
+        <h2 class="title">Select train</h2>
+        <ul *ngFor="let index of getIndexArray(trainsPerRoute)">
+            <li>
+                <button [ngClass]="{'selected-train-button': trainId == index}" type="submit" (click)="showTrain($event)" id="{{'train-'+(index)}}" class="select-train-button" > {{listOfChangeTrains[index].orasOrigine}} - {{listOfChangeTrains[index].orasDestinatie}}</button>       
+            </li>
+        </ul>
+    </div>
+    
+    <div class="trains-container">
+            <div class="train-section" id="train-section">
+                <ul>
+                    <li>
+                        <p class="coach">Wagon {{firstWagon}}</p>
+                        <img (click)="showSeats($event)" id="train-front" class="front-back-train" alt="" [src]="backgroundImageFront">    
+                    </li>
+                    <li *ngFor="let index of getIndexArray(numarVagoane)">
+                        <p class="coach">Wagon {{middleWagons[index]}}</p>
+                        <img (click)="showSeats($event)" id="{{'train-middle-'+middleWagons[index] }}" class="train"  alt="" [src]="backgroundImageMiddle">
+                    </li>
+                    <li>
+                        <p class="coach">Wagon {{lastWagon}}</p>
+                        <img (click)="showSeats($event)" id="train-back" class="front-back-train" alt="" [src]="backgroundImageBack">
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="scroll-buttons" id="scroll-buttons">
+        <img (click)="scrollToLeft()" alt="" class="scroll-right" src="../../../assets/images/left.png">
+        <img (click)="scrollToRight()" alt="" class="scroll-left" src="../../../assets/images/right.png">
+    </div>
+
+    <div class="seats-section" id ="seats-section" *ngIf="showSeatsIndicator">
+        <div id="close-button" (click)="closeBox()">
+            <img alt="" src="../../../assets/images/x.png">
+        </div>
+        <div class="text"> 
+            Wagon {{idVagon}} 
+            <br>       
+        </div>
+       <div class="seats" id="seats"> 
+            <table id="table">
+                <tbody id="tbody-buttons"> 
+                    <tr  class="space-row" style="border-top: 3px solid gray;">
+                        <td colspan="5"></td>
+                    </tr> 
+                    <tr class="space-row-first" style="border-bottom: 3px solid gray;" >
+                        <td colspan="5"></td>
+                    </tr>                 
+                    <tr  style="border-bottom: 3px solid gray;">
+                        <td>
+                            <div class="space-button"></div>
+                        </td>
+                        <td style="border-right: 3px solid gray;">
+                            <div class="space-button"></div>
+                        </td>
+                        <td style="border-bottom: 3px solid rgb(209, 209, 209); border-top: 3px solid white;">
+                            <div class="space-button"></div>
+                        </td>
+                        
+                        <td style="border-left: 3px solid gray;" >
+                            <img class="toilet" alt="" src="../../../assets/images/toilet.png">
+                        </td>
+                    </tr>                  
+                    <tr>
+                        <td>
+                            <img class="luggage" alt="" src="../../../assets/images/luggage.png"> 
+                        </td>
+                        <td>
+                            <div class="space-button"></div>
+                        </td>
+                        <td>
+                            <div class="space-button"></div>
+                        </td>
+                        <td>
+                            <div [ngClass]="{'seat-button': this.seats[0].seatState == 2  , 'seat-button-pending': this.seats[0].seatState == 1, 'seat-button-occupied': this.seats[0].seatState == 0}" id="1" (click)="changeColor($event)">{{this.seats[0].seatNumber}}</div>
+                        </td>
+                        <td>
+                            <div [ngClass]="{'seat-button': this.seats[1].seatState == 2 , 'seat-button-pending': this.seats[1].seatState == 1, 'seat-button-occupied': this.seats[1].seatState == 0}" id="2" (click)="changeColor($event)">{{this.seats[1].seatNumber}}</div>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td colspan="5"></td>
+                    </tr>
+                    <ng-container *ngFor="let row of rows; let i = index;">
+                        <tr>
+                            <td>
+                                <div  style="pointer-events: none;" [ngClass]="{'seat-button': this.seats[row + 1].seatState == 2 , 'seat-button-pending': this.seats[row + 1].seatState == 1, 'seat-button-occupied': this.seats[row + 1].seatState == 0}" id="{{row + 2}}" (click)="changeColor($event)">{{this.seats[row+1].seatNumber}}</div>
+                            </td> 
+                            <td>
+                                <div   [ngClass]="{'seat-button': this.seats[row + 2].seatState == 2, 'seat-button-pending': this.seats[row + 2].seatState == 1, 'seat-button-occupied': this.seats[row + 2].seatState == 0}" id="{{row + 3}}" (click)="changeColor($event)">{{this.seats[row+2].seatNumber}}</div>
+                            </td> 
+                            <td>
+                                <div class="space-button"></div>
+                            </td>
+                            <td>
+                                <div   [ngClass]="{'seat-button': this.seats[row+3].seatState == 2 , 'seat-button-pending': this.seats[row + 3].seatState == 1, 'seat-button-occupied': this.seats[row + 3].seatState == 0}" id="{{row + 4}}" (click)="changeColor($event)">{{this.seats[row+3].seatNumber}}</div>
+                            </td> 
+                            <td>
+                                <div   [ngClass]="{'seat-button': this.seats[row+4].seatState == 2 , 'seat-button-pending': this.seats[row + 4].seatState == 1, 'seat-button-occupied': this.seats[row + 4].seatState == 0}" id="{{row + 5}}" (click)="changeColor($event)">{{this.seats[row+4].seatNumber}}</div>
+                            </td>                                                            
+                        </tr> 
+                        <tr *ngIf="(i+ 1) % 2 === 0"> 
+                            <td colspan="5"></td>  
+                        </tr>                     
+                    </ng-container>                                                         
+                    
+                    <tr>
+                        <td>
+                            <img class="luggage" alt="" src="../../../assets/images/luggage.png"> 
+                        </td>
+                        <td>
+                            <div class="space-button"></div>
+                        </td>
+                        <td>
+                            <div class="space-button"></div>
+                        </td>
+                        <td>
+                            <div [ngClass]="{'seat-button': this.seats[almostLastSeat].seatState == 2 , 'seat-button-pending': this.seats[almostLastSeat].seatState == 1, 'seat-button-occupied': this.seats[almostLastSeat].seatState == 0}" id="{{numarLocuriVagon-1}}" (click)="changeColor($event)">{{this.seats[almostLastSeat].seatNumber}}</div>
+                        </td>
+                        <td>
+                            <div [ngClass]="{'seat-button': this.seats[lastSeat].seatState == 2, 'seat-button-pending': this.seats[lastSeat].seatState == 1, 'seat-button-occupied': this.seats[lastSeat].seatState == 0}" id="{{numarLocuriVagon}}" (click)="changeColor($event)">{{this.seats[lastSeat].seatNumber}}</div>
+                        </td>
+                    </tr>
+                    <tr style="border-top: 3px solid gray;">
+                        <td>
+                            <div class="space-button" ></div>
+                        </td>
+                        <td style="border-right: 3px solid gray;">
+                            <div class="space-button"></div>
+                        </td>
+                        <td style="border-bottom: 3px solid white; border-top: 3px solid rgb(209, 209, 209);">
+                            <div class="space-button"></div>
+                        </td>
+                        <td style="border-left: 3px solid gray;">
+                            <img class="toilet" alt="" src="../../../assets/images/toilet.png">
+                        </td>
+                    </tr>
+                    <tr  class="space-row-last" style="border-top: 3px solid gray;">
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr class="space-row" style="border-bottom: 3px solid gray;">
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
+       <div class="bottom-div">
+            <div class="seats-label">  
+                <p>{{this.selectedSeats[trainId]}} seats selected from {{this.tickets}} seats </p>
+            </div> 
+            <button (click)="save($event)" type="submit" class="save-button" id="save-button">Save</button>
+        </div>
+    </div>
+    <div class="submit-error-lable"></div> 
+    <button (click)="onSubmit()" type="submit" id="next-step-button">Next step</button>  
+</div>

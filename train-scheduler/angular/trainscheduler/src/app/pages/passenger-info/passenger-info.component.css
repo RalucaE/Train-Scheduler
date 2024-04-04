@@ -1,0 +1,156 @@
+.user-info {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #fff;
+    height: 615px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+.user-info form{
+  height: 470px;
+  overflow: scroll;
+}
+.user-text {
+  text-align: center;
+  padding: 5px;
+}
+
+.form-group {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+button[type="submit"] {
+  display: block;
+  width: 90%;
+  margin-top: 1rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.my-alert-2 {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+a
+.my-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.my-alert-2 .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f5c6cb;
+  margin-right: 20px;
+}
+
+.my-alert-2 .icon i {
+  font-size: 15px;
+  color: #721c24;
+}
+
+.my-alert-2 .content h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.my-alert-2 .content p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.my-alert {
+  border: 2px solid #ffc107;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.my-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.back:hover{
+  cursor: pointer;  
+}
+
+.back{
+  margin: 0 1% 0% 0;
+  position: fixed;
+  right: 0;
+  bottom: 0; 
+  width:60px; 
+  height:60px;
+}
+
+#form{
+  padding: 0% 5% 0% 5%;
+}
+.form-div{
+  -moz-box-shadow:    inset  0  10px 10px -10px grey;
+  -webkit-box-shadow: inset  0  10px 10px -10px grey;
+  -moz-box-shadow:    inset  0 -10px 10px -10px grey;
+  -webkit-box-shadow: inset  0 -10px 10px -10px grey;
+  box-shadow: 
+   inset  0  10px 10px -10px grey,
+   inset  0 -10px 10px -10px grey;
+   height: 480px;
+}

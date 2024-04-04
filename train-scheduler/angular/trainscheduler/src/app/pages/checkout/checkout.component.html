@@ -1,0 +1,143 @@
+    <div class="container">
+
+        <form #f="ngForm" novalidate (ngSubmit)="f.valid && onSubmit()">
+    
+            <div class="row">
+    
+                <div class="col">
+    
+                    <h3 class="title">Customer details</h3>
+    
+                    <div class="input-group">
+                        <span>full name :</span>
+                        <input [(ngModel)]="user.fullName" type="text" placeholder="John Doe" name="fullname" required>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['fullname']?.errors && f.submitted">
+                        <div *ngIf="f.controls['fullname']?.errors?.['required']"><small>Full name is required</small></div>
+                    </div>
+                    <div class="input-group">
+                        <span>email :</span>
+                        <input [(ngModel)]="chargeRequest.email" type="email" placeholder="example@example.com" name="email" required email>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['email']?.errors && f.submitted">
+                        <div *ngIf="f.controls['email']?.errors?.['required']"><small>Email is required</small></div>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['email']?.errors && f.submitted">
+                        <div *ngIf="f.controls['email']?.errors?.['email']"><small>Enter a valid email</small></div>
+                    </div>
+                    <!-- <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="mumbai">
+                    </div>
+    
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" placeholder="india">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
+                    </div> -->
+    
+                </div>
+    
+                <div class="col">
+    
+                    <h3 class="title">payment</h3>
+    
+                    <div class="input-group">
+                        <span>cards accepted :</span>
+                        <img src="../../../assets/images/card_img.png" alt="">
+                    </div>
+                    <div class="input-group">
+                        <span>name on card :</span>
+                        <input [(ngModel)]="chargeRequest.cardHolderName" type="text" placeholder="Mr. John Doe" name="nameOnCard" required>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['nameOnCard']?.errors && f.submitted">
+                        <div *ngIf="f.controls['nameOnCard']?.errors?.['required']"><small>Card Name is required</small></div>
+                    </div>
+                    <div class="input-group">
+                        <span>credit card number :</span>
+                        <input [(ngModel)]="chargeRequest.number" type="text" placeholder="1111-2222-3333-4444" name="cardNumber" required minlength="16" maxlength="16">
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['cardNumber']?.errors && f.submitted">
+                        <div *ngIf="f.controls['cardNumber']?.errors?.['minlength']"><small>Card Number must contain 16 digits</small></div>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['cardNumber']?.errors && f.submitted">
+                        <div *ngIf="f.controls['cardNumber']?.errors?.['required']"><small>Card Number is required</small></div>
+                    </div>
+                    <div class="input-group">
+                        <span>expiry month :</span>
+                        <select [(ngModel)]="chargeRequest.expMonth" type="number" placeholder="09" name="expMonth" required maxlength="2">
+                            <option disabled selected value="">Month</option>
+                            <option value=01>01</option>
+                            <option value=02>02</option>
+                            <option value=03>03</option>
+                            <option value=04>04</option>
+                            <option value=05>05</option>
+                            <option value=06>06</option>
+                            <option value=07>07</option>
+                            <option value=08>08</option>
+                            <option value=09>09</option>
+                            <option value=10>10</option>
+                            <option value=11>11</option>
+                            <option value=12>12</option>
+                        </select>
+                    </div>
+                    <div class="text-danger" *ngIf="f.controls['expMonth']?.errors && f.submitted">
+                        <div *ngIf="f.controls['expMonth']?.errors?.['required']"><small>Expiry month is required</small></div>
+                    </div>
+    
+                    <div class="flex" style="margin-top: 15px;">
+                        <div class="input-group">
+                            <div>
+                                <span>expiry year :</span>
+                                <select [(ngModel)]="chargeRequest.expYear" type="number" placeholder="2024" name="expYear" required minlength="4" maxlength="4">
+                                    <option disabled selected value="">Year</option>
+                                    <option selected value=2024>2024</option>
+                                    <option value=2025>2025</option>
+                                    <option value=2026>2026</option>
+                                    <option value=2027>2027</option>
+                                    <option value=2028>2028</option>
+                                    <option value=2029>2029</option>
+                                    <option value=2030>2030</option>
+                                    <option value=2031>2031</option>
+                                </select>
+                            </div>
+                            
+                            <!-- <input type="text" [value]="chargeRequest.expYear" placeholder="Year" readonly> -->
+                            <div class="text-danger" *ngIf="f.controls['expYear']?.errors && f.submitted">
+                                <div *ngIf="f.controls['expYear']?.errors?.['required']"><small>Expiry year is required</small></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <span>CVV :</span>
+                            <input [(ngModel)]="chargeRequest.cvc" type="text" placeholder="123" name="cvc" required minlength="3" maxlength="3">
+                            <div class="text-danger" *ngIf="f.controls['cvc']?.errors && f.submitted">
+                                <div *ngIf="f.controls['cvc']?.errors?.['required']"><small>CVV is required</small></div>
+                            </div>
+                            <div class="text-danger" *ngIf="f.controls['cvc']?.errors && f.submitted">
+                                <div *ngIf="f.controls['cvc']?.errors?.['minlength']"><small>CVV must contain 3 digits</small></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                </div>
+        
+            </div>
+    
+            <!-- <input type="submit" value="proceed to checkout" class="submit-btn"> -->
+            <button class="submit-btn" type="submit">Pay {{chargeRequest.amount}} RON</button>
+    
+        </form>
+    
+    </div>      
+
+  

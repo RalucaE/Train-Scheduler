@@ -1,0 +1,13 @@
+<div class="dialog-container" style="height: 250px;">
+    <div class="modal-header" style="background-color: #4070f4; height: 60px; width: 400px; display: flex; align-items: center; justify-content: center;">
+        <h1 mat-dialog-title style="color: white; font-size: 26px; font-weight: 500;">Login Required</h1>
+    </div>
+    <div mat-dialog-content style="font-size: 18px; color: black; display: block; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <p style="max-width: 350px; margin: 0 auto;">To buy a ticket, you must be logged in. Please log in to continue.</p>
+    </div>
+    
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" style="font-size: 16px; background-color: #4070f4;" (click)="redirectToLogin()">Go to login</button>
+        <button mat-raised-button color="basic" style="border:2px solid #4070f4 ; font-size: 16px;" (click)="closeModal()">Cancel</button>
+    </div>
+</div>

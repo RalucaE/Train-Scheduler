@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone'){
+            steps{
+                git branch: 'main-app', url: 'https://gitlab.rdbav.ro/gridcontrol-05/train-scheduler.git'
+            }
+        }
+        stage('Build') {
+            steps {
+              bat '''
+             cd spring/trainscheduler
+             docker build -t spring-image .
+             cd database
+             docker build -t mysql-image .
+             cd ../../..
+             cd angular/trainscheduler
+             docker build -t angular-image .
+             cd ../..
+              '''
+            }
+        }
+    stage('Build and Run Docker Compose') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com/', 'dockerhub-creds') {
+                        bat 'docker-compose up -d'
+                    }
+                }
+            }
+        }
+    }
+}

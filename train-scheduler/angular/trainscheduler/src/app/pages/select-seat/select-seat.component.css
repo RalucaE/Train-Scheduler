@@ -1,0 +1,252 @@
+.container{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1270px;
+}
+.train{
+    width: 300px;
+    height: 100px;
+    margin-top: 3%;
+}
+.front-back-train{
+    width:320px; 
+    height: 107px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    
+}
+.trains-container {
+  backdrop-filter: blur(50px); 
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  
+} 
+
+.train-section{
+    overflow-x: scroll;
+    background-image: linear-gradient(to right, white, white),
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+    linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 0px 100%, 0px 100%, 10px 100%, 10px 100%;
+    background-attachment: local, local, scroll, scroll;
+}
+
+.train-section img:hover, .scroll-buttons img:hover{
+  cursor: pointer;
+}
+.scroll-right, .scroll-left{
+  width: 40px;
+  height: 40px;
+}
+.scroll-left{
+  float: right;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.shadow-right {
+  height: 20px;
+  position: absolute;
+  background-image: radial-gradient(farthest-side at 50% 0%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.shadow-left {
+  height: 20px;
+  position: absolute;
+  background-image: radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.seats-section{
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  background-color: #fff;
+  width: 400px;
+  height: 84%;
+  padding: 0.5%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.seats{
+  overflow: scroll;
+  height: 80%;
+  background-image: linear-gradient(to top, white, white),
+  linear-gradient(to top, white, white),
+  linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+  background-position: bottom center, top center, bottom center, top center;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100% 20px, 100% 20px, 100% 10px, 100% 10px;
+  background-attachment: local, local, scroll, scroll;
+}
+.seat-button{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 140, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 10px;  
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 
+    rgba(0,0,0,0.2) 1px 1px 0,
+    rgba(0,0,0,0.2) 2px 2px 0,
+    rgba(0,0,0,0.2) 3px 3px 0,
+    rgba(0,0,0,0.2) 4px 4px 0,
+    rgba(0,0,0,0.2) 5px 5px 0,
+    rgba(0,0,0,0.2) 6px 6px 0;               
+}
+.seat-button-occupied{
+  width: 50px;
+  height: 50px;
+  background-color: rgba(232, 15, 15, 0.841);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 10px;  
+  cursor: default;
+  pointer-events: none;
+  font-size: 24px;
+  box-shadow: 
+    rgba(0,0,0,0.2) 1px 1px 0,
+    rgba(0,0,0,0.2) 2px 2px 0,
+    rgba(0,0,0,0.2) 3px 3px 0,
+    rgba(0,0,0,0.2) 4px 4px 0,
+    rgba(0,0,0,0.2) 5px 5px 0,
+    rgba(0,0,0,0.2) 6px 6px 0; 
+}
+.seat-button-pending{
+  width: 50px;
+  height: 50px;
+  background-color: rgba(248, 95, 7, 0.841);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 10px; 
+  cursor: default; 
+  
+  pointer-events:none;
+  font-size: 24px;
+  box-shadow: 
+    rgba(0,0,0,0.2) 1px 1px 0,
+    rgba(0,0,0,0.2) 2px 2px 0,
+    rgba(0,0,0,0.2) 3px 3px 0,
+    rgba(0,0,0,0.2) 4px 4px 0,
+    rgba(0,0,0,0.2) 5px 5px 0,
+    rgba(0,0,0,0.2) 6px 6px 0;  
+}
+#text{
+  pointer-events: none;
+}
+.space-button, .luggage{
+    width: 50px;
+    height: 50px;
+}
+.toilet{
+  width: 50px;
+  height: 40px;
+}
+  
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+td{ 
+  padding: 0.3rem;
+}
+.space-row , .space-row-first, .space-row-last {
+  height: 20px;
+}
+tr{
+  border-right: 3px solid gray;
+  border-left: 3px solid gray;
+}
+.text{
+  font-size: 23px;
+  text-align: center;
+ 
+  padding-bottom: 2%;
+}
+#close-button{
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-right: 1%;
+  cursor: pointer;
+}
+#close-button img{
+  width: 20px;
+  height: 20px;
+}
+.save-button, #next-step-button, .select-train-button {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgb(0, 140, 255);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.seats-label {
+  margin-left: 5%;
+  color: red;
+}
+.submit-error-lable {
+  text-align: center;
+  color: red;
+  position:fixed;
+  top: 80%;
+  left: 45%;
+  z-index: -1;
+}
+#next-step-button{
+  position:fixed;
+  top: 85%;
+  left: 35%;
+  width: 32%;
+  height: 50px;
+  z-index: -1;
+}
+.seats-button:hover {
+  background-color: #0069d9;
+}
+.seats-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+.title{
+  margin: 2%;
+}
+.coach{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 2%;
+  margin-bottom: 0;
+  text-align: center;
+}
+.select-train ul{
+  display: inline-flex;  
+  margin-bottom: 2%;
+}
+.select-train li {
+  width: 200px;
+}
+.selected-train-button{
+  background-color: rgb(0, 128, 0);
+}
+

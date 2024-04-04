@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c137b349-8083-4029-85c7-6320829cb40b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/trainscheduler/src/app/pages/train-routes/train-routes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular/trainscheduler/src/assets/ticket.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../angular/trainscheduler/src/assets/ticket.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainscheduler/database/dumpFile.sql" beforeDir="false" afterPath="$PROJECT_DIR$/trainscheduler/database/dumpFile.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainscheduler/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trainscheduler/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainscheduler/src/main/resources/static/file_with_qrcode/ticket_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/trainscheduler/src/main/resources/static/file_with_qrcode/ticket_1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainscheduler/src/main/resources/static/file_with_qrcode/ticket_2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/trainscheduler/src/main/resources/static/file_with_qrcode/ticket_2.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2OYBdP37WVFBZRQq3Jb2hXEAp0h" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;marcel-branch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CiangauRalucaElena/Desktop/SIEMENS/Echipa Digital Grid/TrainsSchedulerNew/train-scheduler/spring&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a2dd565faab156884d5cd22881f00f9c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.project.trainscheduler" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CiangauRalucaElena\Desktop\SIEMENS\TrainsScheduler\train-scheduler\spring\trainscheduler\database" />
+      <recent name="C:\Users\CiangauRalucaElena\Desktop\SIEMENS\Train Scheduler\train-scheduler\spring\trainscheduler\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TrainschedulerApplication">
+    <configuration name="TrainschedulerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.trainscheduler.TrainschedulerApplication" />
+      <module name="trainscheduler" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trainscheduler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.trainscheduler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainschedulerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="trainscheduler" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.trainscheduler.TrainschedulerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.TrainschedulerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TrainschedulerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c137b349-8083-4029-85c7-6320829cb40b" name="Changes" comment="" />
+      <created>1681727724125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681727724125</updated>
+      <workItem from="1683979394660" duration="2964000" />
+      <workItem from="1684066550949" duration="19142000" />
+      <workItem from="1684233981928" duration="40000" />
+      <workItem from="1686652771607" duration="3939000" />
+      <workItem from="1687531326818" duration="987000" />
+      <workItem from="1688551136141" duration="697000" />
+      <workItem from="1689147629572" duration="38505000" />
+      <workItem from="1691060528403" duration="19336000" />
+      <workItem from="1691506482668" duration="12671000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update application.properties">
+      <created>1683458121560</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683458121560</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update application.properties" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/trainscheduler/src/main/java/com/project/trainscheduler/controller/TrainRoutesController.java</url>
+          <line>293</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/trainscheduler/src/main/java/com/project/trainscheduler/controller/TrainRoutesController.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="result.isPresent()" />
+        <watch expression="method.root" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,69 @@
+/* .container {
+    margin: 20px auto;
+    max-width: 960px;
+    padding: 0 15px;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+
+  }
+  
+  .table th {
+    font-weight: 700;
+
+  }
+  
+
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+  }
+  
+  @media (max-width: 575.98px) {
+    .table-responsive-sm {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    .table-responsive-sm > .table-bordered {
+      border: 0;
+    }
+  }
+
+  .table-container {
+    max-height: 300px; /* Adjust the height as needed */
+    /* overflow-y: scroll;
+  }
+
+  /* Hide the scrollbar */
+/* .table-container::-webkit-scrollbar {
+  width: 0.5em; 
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}  */
+table {
+  width: 100%;
+}
+
+.button-margin {
+  margin-right: 5px; 
+}
+

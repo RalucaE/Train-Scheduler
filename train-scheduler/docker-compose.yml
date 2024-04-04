@@ -1,0 +1,36 @@
+version: '1'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql-image
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - nw
+
+  spring-app:
+    image: spring-image
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/test
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - nw
+    restart: always
+
+  angular-app:
+    image: angular-image
+    ports:
+      - 4200:4200
+    networks:
+      - nw
+
+networks:
+  nw:
+   
